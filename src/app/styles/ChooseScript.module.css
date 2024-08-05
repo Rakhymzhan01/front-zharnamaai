@@ -1,0 +1,136 @@
+/* Container and Form Styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+
+
+/* Add the pseudo-element for opacity */
+.form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1c1c1e; /* Background color of the form */
+  opacity: 0.5; /* 50% opacity */
+  z-index: -1; /* Ensure it is behind all the form content */
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #a1a1a1;
+}
+
+.arrow {
+  cursor: pointer;
+  align-self: flex-start;
+  font-size: 1.5rem;
+  color: #8a2be2;
+}
+
+/* Scripts Container Styles */
+.scriptsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.scriptCard {
+  padding: 1rem;
+  background-color: #2a2a3a;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scriptCard:hover {
+  transform: translateY(-2px);
+}
+
+.scriptCard strong {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.scriptCard p {
+  margin: 0;
+  color: #cccccc;
+}
+
+.selected {
+  background-color: #3a3a4a;
+}
+
+/* Button Styles */
+.button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #8a2be2;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #7323b2;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .form {
+    padding: 1.5rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header p {
+    font-size: 0.875rem;
+  }
+
+  .scriptCard strong {
+    font-size: 1rem;
+  }
+
+  .scriptCard p {
+    font-size: 0.875rem;
+  }
+
+  .button {
+    font-size: 1rem;
+  }
+}

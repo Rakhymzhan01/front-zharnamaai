@@ -1,0 +1,35 @@
+[
+    {
+      "name": "Roku Express",
+      "url": "https://www.amazon.com/Roku-Express-Streaming-Player-Composite/dp/B01M2AJZ5P",
+      "info": {
+        "title": "Roku Express | HD Streaming Media Player with High Speed HDMI Cable and Simple Remote",
+        "description": "Roku Express delivers a smooth HD streaming experience on your TV at our best price. It’s easy to get started - just plug it into your TV with the included High Speed HDMI Cable and connect to the internet."
+      }
+    },
+    {
+      "name": "Tesla Model 3",
+      "url": "https://www.tesla.com/model3",
+      "info": {
+        "title": "Tesla Model 3",
+        "description": "Model 3 is designed for electric-powered performance, with dual motor AWD, quick acceleration, long range and fast charging."
+      }
+    },
+    {
+      "name": "Charcuterie Board",
+      "url": "https://www.etsy.com/listing/1567221560/charcuterie-board-personalized-cheese",
+      "info": {
+        "title": "Charcuterie Board Personalized Cheese Board",
+        "description": "Beautifully crafted charcuterie board perfect for serving cheese and other appetizers. Can be personalized with your name or a special message."
+      }
+    },
+    {
+      "name": "Dyson V10",
+      "url": "https://www.ebay.com/itm/276014546170",
+      "info": {
+        "title": "Dyson V10 Absolute Cordless Vacuum",
+        "description": "Dyson V10 Absolute provides powerful suction to deep clean your home. Its lightweight and versatile design makes it easy to handle."
+      }
+    }
+  ]
+  

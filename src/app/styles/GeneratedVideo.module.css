@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 2rem;
+    background-color: #f0f0f0;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .videoWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .video {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 1.5rem;
+  }
+  

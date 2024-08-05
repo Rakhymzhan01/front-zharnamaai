@@ -1,0 +1,140 @@
+/* Container and Form Styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  margin-left: 1rem;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.arrow {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #8a2be2;
+}
+
+/* Input and Textarea Styles */
+.inputField,
+.textArea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: rgba(42, 42, 58, 0.8); /* Updated background color */
+  color: white;
+}
+
+.textArea {
+  height: 150px;
+}
+
+/* File Upload Styles */
+.fileUpload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.fileUpload input[type="file"] {
+  display: none;
+}
+
+.fileUpload label {
+  background-color: #8a2be2;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.fileUpload label:hover {
+  background-color: #7029b8;
+}
+
+.imagePreview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.imageContainer img {
+  border-radius: 8px;
+}
+
+.deleteButton {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #41404044;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button Styles */
+.button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #8a2be2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #7029b8;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .form {
+    padding: 1.5rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .inputField,
+  .textArea {
+    font-size: 0.875rem;
+  }
+
+  .button {
+    font-size: 1rem;
+  }
+}

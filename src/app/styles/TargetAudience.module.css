@@ -1,0 +1,177 @@
+
+/* Existing styles */
+
+.loader {
+  margin-top: 10px;
+  width: 25px;
+  height: 50px;
+  display: grid;
+  color: #fff;
+  background:
+    linear-gradient(currentColor 0 0) top/100% 2px,
+    radial-gradient(farthest-side at  top, #0000 calc(100% - 2px),currentColor calc(100% - 1px) ,#0000) top,
+    linear-gradient(currentColor 0 0) bottom/100% 2px,
+    radial-gradient(farthest-side at  bottom, #0000 calc(100% - 2px),currentColor calc(100% - 1px) ,#0000) bottom;
+  background-size: 100% 1px,100% 50%; 
+  background-repeat: no-repeat;
+  animation: l18 4s infinite linear;
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  grid-area: 1/1;
+  background: inherit;
+  border: inherit;
+  animation: inherit;
+}
+.loader::after {
+  animation-duration: 2s;
+}
+@keyframes l18 {
+  100% {transform: rotate(1turn)}
+}
+/* Container and Form Styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 16px;
+  background-color: rgba(0, 0, 0, 0.5); /* 50% opacity black background */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/* Add the pseudo-element for opacity */
+.form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000; /* Background color of the form */
+  opacity: 0.5; /* 50% opacity */
+  z-index: -1; /* Ensure it is behind all the form content */
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #a1a1a1;
+}
+
+.arrow {
+  cursor: pointer;
+  align-self: flex-start;
+  font-size: 1.5rem;
+  color: #8a2be2;
+}
+
+/* Input Styles */
+.inputField {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: rgba(42, 42, 58, 0.8); /* Updated background color */
+  color: white;
+}
+
+.inputField::placeholder {
+  color: #e1e1e1; /* Updated placeholder color */
+}
+
+/* Suggestions Container Styles */
+.suggestionsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.suggestion {
+  padding: 0.5rem 1rem;
+  background-color: #2a2a3a;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion:hover {
+  transform: translateY(-2px);
+}
+
+.suggestion.active {
+  background-color: #3a3a4a;
+}
+
+/* Button Styles */
+.button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #8a2be2;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #7323b2;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .form {
+    padding: 1.5rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header p {
+    font-size: 0.875rem;
+  }
+
+  .suggestion {
+    font-size: 0.875rem;
+  }
+
+  .button {
+    font-size: 1rem;
+  }
+}
