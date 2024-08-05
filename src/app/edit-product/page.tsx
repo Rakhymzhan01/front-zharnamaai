@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import Image from 'next/image';
 import styles from '../styles/EditProduct.module.css';
+import Image from 'next/image';
 
-const EditProductContent: React.FC = () => {
+const EditProduct = () => {
   const [productName, setProductName] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const [images, setImages] = useState<string[]>([]);
@@ -90,12 +90,10 @@ const EditProductContent: React.FC = () => {
   );
 };
 
-const EditProductPage: React.FC = () => {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <EditProductContent />
-    </Suspense>
-  );
-};
+const EditProductWrapper = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <EditProduct />
+  </Suspense>
+);
 
-export default EditProductPage;
+export default EditProductWrapper;

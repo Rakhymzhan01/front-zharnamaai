@@ -24,20 +24,22 @@ const Hero: React.FC = () => {
     setProductUrl(e.target.value);
   };
 
-  const handleStartGenerating = async () => {
+  const handleStartGenerating = async (url: string) => {
     const requestId = uuidv4();
     setIsLoading(true);
     try {
-      const response = await axios.post('https://zharnamaai-9aae87a9f8d0.herokuapp.com/api/gpt/parse-product', { url: productUrl });
-      const data = { id: requestId, ...response.data };
-      localStorage.setItem(`request_${requestId}`, JSON.stringify(data));
-      router.push(`/edit-product?id=${requestId}`);
-    } catch (error: any) {
-      if (axios.isAxiosError(error)) {
-        console.error('Axios error:', error.response?.data || error.message);
+      const response = await axios.get('/path/to/products.json');
+      const product = response.data.find((p: any) => p.url === url);
+
+      if (product) {
+        const data = { id: requestId, ...product };
+        localStorage.setItem(`request_${requestId}`, JSON.stringify(data));
+        router.push(`/edit-product?id=${requestId}`);
       } else {
-        console.error('Unexpected error:', error);
+        console.error('Product not found');
       }
+    } catch (error: any) {
+      console.error('Error generating video:', error.response ? error.response.data : error.message);
     } finally {
       setIsLoading(false);
     }
@@ -46,7 +48,7 @@ const Hero: React.FC = () => {
   const handleSampleSelect = (sampleUrl: string) => {
     setProductUrl(sampleUrl);
     setDropdownOpen(false);
-    handleStartGenerating();
+    handleStartGenerating(sampleUrl);
   };
 
   useEffect(() => {
@@ -69,7 +71,7 @@ const Hero: React.FC = () => {
               onChange={handleInputChange}
               className={styles.input}
             />
-            <button className={styles.inputButton} onClick={handleStartGenerating} disabled={isLoading}>
+            <button className={styles.inputButton} onClick={() => handleStartGenerating(productUrl)} disabled={isLoading}>
               Generate video
             </button>
           </div>
