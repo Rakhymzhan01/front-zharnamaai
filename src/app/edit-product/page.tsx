@@ -17,7 +17,7 @@ const EditProduct = () => {
       const storedData = localStorage.getItem(`request_${requestId}`);
       if (storedData) {
         const parsedData = JSON.parse(storedData);
-        setProductName(parsedData.title || '');
+        setProductName(parsedData.name || '');
         setDescription(parsedData.description || '');
         setImages(parsedData.images || []);
       }
@@ -48,7 +48,7 @@ const EditProduct = () => {
       <div className={styles.form}>
         <div className={styles.header}>
           <span className={styles.arrow} onClick={() => router.back()}>&larr;</span>
-          <h1>Edit your product's name, description, and media</h1>
+          <h1>Edit your product&apos;s name, description, and media</h1>
         </div>
         <input
           type="text"
@@ -68,6 +68,7 @@ const EditProduct = () => {
           <input
             type="file"
             id="media"
+            accept="image/*"
             multiple
             onChange={handleFileChange}
           />

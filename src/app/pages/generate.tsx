@@ -31,7 +31,7 @@ const Generate: React.FC = () => {
     <div className={styles.hero}>
       <div className={styles.heroText}>
         <h1>Generate AI Ads from your product URL</h1>
-        <p>Just insert your product's link and we will generate your video in 30 seconds</p>
+        <p>Just insert your product&apos;s link and we will generate your video in 30 seconds</p>
         <div className={styles.inputWrapper}>
           <input
             type="text"

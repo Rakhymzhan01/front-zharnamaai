@@ -1,4 +1,3 @@
-// src/app/generate/page.tsx
 'use client';
 
 import React from 'react';

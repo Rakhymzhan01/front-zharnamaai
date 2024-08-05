@@ -5,6 +5,7 @@ import TestComponent from './components/TestComponent'; // Ensure the path is co
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
+    //@ts-ignore
     <ProductProvider>
       <TestComponent /> {/* Add this to check context */}
       <Component {...pageProps} />
