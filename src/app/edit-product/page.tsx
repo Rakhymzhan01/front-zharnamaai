@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Image from 'next/image';
 import styles from '../styles/EditProduct.module.css';
 
-const EditProduct = () => {
+const EditProductContent: React.FC = () => {
   const [productName, setProductName] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const [images, setImages] = useState<string[]>([]);
@@ -75,7 +76,7 @@ const EditProduct = () => {
           <div className={styles.imagePreview}>
             {images.map((src, index) => (
               <div key={index} className={styles.imageContainer}>
-                <img src={src} alt={`media-${index}`} width="50" />
+                <Image src={src} alt={`media-${index}`} width={50} height={50} />
                 <button className={styles.deleteButton} onClick={() => handleDeleteImage(index)}>x</button>
               </div>
             ))}
@@ -89,4 +90,12 @@ const EditProduct = () => {
   );
 };
 
-export default EditProduct;
+const EditProductPage: React.FC = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <EditProductContent />
+    </Suspense>
+  );
+};
+
+export default EditProductPage;

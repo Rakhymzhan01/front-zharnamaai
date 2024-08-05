@@ -1,10 +1,10 @@
 'use client';
 
-import React from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import React, { Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import styles from '../styles/GeneratedVideo.module.css';
 
-const GeneratePage: React.FC = () => {
+const GeneratedVideoContent: React.FC = () => {
   const searchParams = useSearchParams();
   const videoUrl = searchParams.get('videoUrl');
 
@@ -25,4 +25,12 @@ const GeneratePage: React.FC = () => {
   );
 };
 
-export default GeneratePage;
+const GeneratedVideoPage: React.FC = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <GeneratedVideoContent />
+    </Suspense>
+  );
+};
+
+export default GeneratedVideoPage;
